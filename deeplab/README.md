@@ -10,12 +10,7 @@ We implement Deeplab v3+ with ResNet and CSN backbones on Salt marsh dataset[Dee
 
 
 ### Installation
-0. Clone the repo:
-    ```Shell
-    git clone https://github.com/jfzhang95/pytorch-deeplab-xception.git
-    cd pytorch-deeplab-xception
-    ```
-
+0. Clone the repo.
 1. Install dependencies:
 
     For PyTorch dependency, see [pytorch.org](https://pytorch.org/) for more details.
