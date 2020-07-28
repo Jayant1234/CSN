@@ -1,10 +1,10 @@
 # deeplab
-We implement Deeplab v3+ with ResNet and CSN backbones on Salt marsh dataset. 
+
 
 
 
 ### Introduction
-This is a PyTorch(0.4.1) implementation of [DeepLab-V3-Plus](https://arxiv.org/pdf/1802.02611).
+We implement Deeplab v3+ with ResNet and CSN backbones on Salt marsh dataset[DeepLab-V3-Plus](https://arxiv.org/pdf/1802.02611).
 
 ![Results](doc/results.png)
 
@@ -58,3 +58,5 @@ Follow steps below to train your model:
 ### Acknowledgement
 This repository is heavily influenced from [JF Zhang's Deeplab v3+ repo](https://github.com/jfzhang95/pytorch-deeplab-xception).
 [pytorch-deeplab-xception](https://github.com/jfzhang95/pytorch-deeplab-xception)
+
+Compositional Sparse Network's paper is under progress. 
