@@ -1,4 +1,4 @@
-# deeplab
+# deeplab on Salt marsh data
 
 
 
@@ -6,7 +6,7 @@
 ### Introduction
 We implement Deeplab v3+ with ResNet and CSN backbones on Salt marsh dataset[DeepLab-V3-Plus](https://arxiv.org/pdf/1802.02611).
 
-![Results](doc/results.png)
+![Results](doc/2.png)
 
 
 ### Installation
