@@ -1,35 +1,15 @@
-# pytorch-deeplab-xception
-
-**Update on 2018/12/06. Provide model trained on VOC and SBD datasets.**  
-
-**Update on 2018/11/24. Release newest version code, which fix some previous issues and also add support for new backbones and multi-gpu training. For previous code, please see in `previous` branch**  
-
-### TODO
-- [x] Support different backbones
-- [x] Support VOC, SBD, Cityscapes and COCO datasets
-- [x] Multi-GPU training
-
-
-
-| Backbone  | train/eval os  |mIoU in val |Pretrained Model|
-| :-------- | :------------: |:---------: |:--------------:|
-| ResNet    | 16/16          | 78.43%     | [google drive](https://drive.google.com/open?id=1NwcwlWqA-0HqAPk3dSNNPipGMF0iS0Zu) |
-| MobileNet | 16/16          | 70.81%     | [google drive](https://drive.google.com/open?id=1G9mWafUAj09P4KvGSRVzIsV_U5OqFLdt) |
-| DRN       | 16/16          | 78.87%     | [google drive](https://drive.google.com/open?id=131gZN_dKEXO79NknIQazPJ-4UmRrZAfI) |
+# deeplab
+We implement Deeplab v3+ with ResNet and CSN backbones on Salt marsh dataset. 
 
 
 
 ### Introduction
-This is a PyTorch(0.4.1) implementation of [DeepLab-V3-Plus](https://arxiv.org/pdf/1802.02611). It
-can use Modified Aligned Xception and ResNet as backbone. Currently, we train DeepLab V3 Plus
-using Pascal VOC 2012, SBD and Cityscapes datasets.
+This is a PyTorch(0.4.1) implementation of [DeepLab-V3-Plus](https://arxiv.org/pdf/1802.02611).
 
 ![Results](doc/results.png)
 
 
 ### Installation
-The code was tested with Anaconda and Python 3.6. After installing the Anaconda environment:
-
 0. Clone the repo:
     ```Shell
     git clone https://github.com/jfzhang95/pytorch-deeplab-xception.git
@@ -44,15 +24,15 @@ The code was tested with Anaconda and Python 3.6. After installing the Anaconda 
     ```Shell
     pip install matplotlib pillow tensorboardX tqdm
     ```
-### Training
+### Training of Deeplab with ResNet backbone
 Follow steps below to train your model:
 
-0. Configure your dataset path in [mypath.py](https://github.com/jfzhang95/pytorch-deeplab-xception/blob/master/mypath.py).
+0. Configure your dataset path and download the salt marsh dataset in Data folder from google drive link in parent folder.
 
 1. Input arguments: (see full input arguments via python train.py --help):
     ```Shell
     usage: train.py [-h] [--backbone {resnet,xception,drn,mobilenet}]
-                [--out-stride OUT_STRIDE] [--dataset {pascal,coco,cityscapes}]
+                [--out-stride OUT_STRIDE] [--dataset {marsh}]
                 [--use-sbd] [--workers N] [--base-size BASE_SIZE]
                 [--crop-size CROP_SIZE] [--sync-bn SYNC_BN]
                 [--freeze-bn FREEZE_BN] [--loss-type {ce,focal}] [--epochs N]
@@ -65,19 +45,16 @@ Follow steps below to train your model:
                 [--no-val]
 
     ```
+  ### Training of Deeplab with Compositional Sparse backbone
+ 0. Configure your dataset path and download the salt marsh dataset in Data folder from google drive link in parent folder.
 
-2. To train deeplabv3+ using Pascal VOC dataset and ResNet as backbone:
-    ```Shell
-    bash train_voc.sh
-    ```
-3. To train deeplabv3+ using COCO dataset and ResNet as backbone:
-    ```Shell
-    bash train_coco.sh
-    ```    
+ 1. Install jupyter notebook and open by ```jupyter DeepLabV3 and CSN onSaltmarsh.ipynb```
+ 
+ 2. Run all columns of DeepLabV3 and CSN onSaltmarsh.ipynb
+ 
+ 3. Currently, to test out different hyperparameters of CSN, you will have make changes manually. We will update documentation to make this process better later. 
+
 
 ### Acknowledgement
-[PyTorch-Encoding](https://github.com/zhanghang1989/PyTorch-Encoding)
-
-[Synchronized-BatchNorm-PyTorch](https://github.com/vacancy/Synchronized-BatchNorm-PyTorch)
-
-[drn](https://github.com/fyu/drn)
+This repository is heavily influenced from [JF Zhang's Deeplab v3+ repo](https://github.com/jfzhang95/pytorch-deeplab-xception).
+[pytorch-deeplab-xception](https://github.com/jfzhang95/pytorch-deeplab-xception)
