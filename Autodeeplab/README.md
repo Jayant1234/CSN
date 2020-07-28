@@ -1,6 +1,7 @@
 # AutoML for Image Semantic Segmentation :  https://github.com/NoamRosenberg/autodeeplab
 This repo is modified for salt marsh data based on the code by NoamRosenberg. 
-this repo contains  open-source implementation of [Auto-Deeplab](https://arxiv.org/abs/1901.02985) which **out-performs** that of the original paper. 
+
+This repo contains  open-source implementation of [Auto-Deeplab](https://arxiv.org/abs/1901.02985) which **out-performs** that of the original paper. 
 
 
 Following the popular trend of modern CNN architectures having a two level hierarchy. Auto-Deeplab forms a dual level search space, searching for optimal network and cell architecture.
